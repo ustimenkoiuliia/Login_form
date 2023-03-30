@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400;700&display=swap" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <button id="signUpBtn">Sign up</button>
+      <button id="logInBtn">Log in</button>
+      <img class="logo" src="images/kisspng-leaf-marin-tennis-club-plant-stem-clip-art-small-leaf-5b3a707d4e9125.6858957615305565413218.png" alt="logo">
+    </div>
+
+  </header>
+
+  <div class="greeting">Welcome to...</div>
+
+<div class="container">
+  <form action="" class="sign-up" name="signUp">
+    <h1 class="heading">Sign up</h1>
+    <input class="required" type="text" name="login"  required placeholder="Login*" minlength="4">
+    <span class="notFilled">Введите email!</span>
+    <input class="required" type="text" name="email"  required placeholder="Email*">
+    <input class="required" type="password" name="password" required  placeholder="Password*" minlength="6">
+    <input class="required" type="password" name="passwordConfirmInput" required minlength="6"  placeholder="Confirm password*">
+    <input type="submit" value="REGISTER">
+  </form>
+
+  <form action="" class="log-in" name="logIn">
+    <h1 class="heading">Log in</h1>
+    <input class="required" type="text" name="login"  required placeholder="Login*">
+    <input class="required" type="text" name="email"  required placeholder="Email*">
+    <input class="required" type="password" name="password" id="password" required  placeholder="Password*">
+    <button id="forgetPassword">Forgot password?</button>
+    <input type="submit" value="LOG IN">
+  </form>
+
+  <form action="" class="remindPassword" name="remindPassword">
+    <h1 class="heading">Forgot your password?</h1>
+    <input class="required" type="text" name="email" required placeholder="Email*">
+    <input type="submit" value="Send password on my email">
+    <button id="backToLogIn">&#8592; Back to log in</button>
+  </form>
+</div>
+
+  <script src="main.js"></script>
+</body>
+</html>
