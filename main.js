@@ -40,30 +40,32 @@ requiredInputs.forEach(item => item.addEventListener('blur', function () {
   
 }))
 
-formSignUp.email.addEventListener('input', checkEmailValidity)
+formSignUp.email.addEventListener('input', checkEmailValidity(formSignUp))
+formLogIn.email.addEventListener('input', checkEmailValidity(formLogIn))
+formRemindPassword.email.addEventListener('input', checkEmailValidity(formRemindPassword))
 
-function checkEmailValidity(e) {
-  let value = formSignUp.email.value;
+function checkEmailValidity(form) {
+  let value = form.email.value;
   const emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   if (!emailPattern.test(value)) {
-    formSignUp.email.setCustomValidity('Вы ввели некорректный адрес');
+    form.email.setCustomValidity('Вы ввели некорректный адрес');
   } else {
-    formSignUp.email.setCustomValidity('');
+    form.email.setCustomValidity('');
 
   }
 }
 
-formSignUp.passwordConfirmInput.addEventListener('input', checkPasswordValidity);
+formSignUp.passwordConfirmInput.addEventListener('input', checkPasswordValidity(formSignUp));
 
-function checkPasswordValidity() {
-    if (formSignUp.passwordConfirmInput.value != formSignUp.password.value) {
-        formSignUp.passwordConfirmInput.setCustomValidity("Пароль и подтверждение пароля не совпадают.");
-        formSignUp.password.setCustomValidity("Пароль и подтверждение пароля не совпадают.");
+
+function checkPasswordValidity(form) {
+    if (form.passwordConfirmInput.value != form.password.value) {
+        form.passwordConfirmInput.setCustomValidity("Пароль и подтверждение пароля не совпадают.");
+        form.password.setCustomValidity("Пароль и подтверждение пароля не совпадают.");
     }
     else {
-        formSignUp.passwordConfirmInput.setCustomValidity(""); 
-        formSignUp.password.setCustomValidity("");
+        form.passwordConfirmInput.setCustomValidity(""); 
+        form.password.setCustomValidity("");
     }
 }
-
 
