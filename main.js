@@ -10,11 +10,13 @@ let backToLogInBtn = document.querySelector('#backToLogIn');
 signUpBtn.addEventListener('click', function () {
   formLogIn.style.display = 'none';
   formSignUp.style.display = 'block';
+  formRemindPassword.style.display = 'none';
 })
 
 logInBtn.addEventListener('click', function () {
   formLogIn.style.display = 'block';
   formSignUp.style.display = 'none';
+  formRemindPassword.style.display = 'none';
 })
 
 forgetPasswordBtn.addEventListener('click', function () {
