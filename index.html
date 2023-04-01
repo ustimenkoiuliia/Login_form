@@ -27,26 +27,33 @@
 <div class="container">
   <form action="" class="sign-up" name="signUp">
     <h1 class="heading">Sign up</h1>
-    <input class="required" type="text" name="login"  required placeholder="Login*" minlength="4">
-    <span class="notFilled">Введите email!</span>
-    <input class="required" type="text" name="email"  required placeholder="Email*">
-    <input class="required" type="password" name="password" required  placeholder="Password*" minlength="6">
-    <input class="required" type="password" name="passwordConfirmInput" required minlength="6"  placeholder="Confirm password*">
+    <input class="required" type="text" name="login"  required placeholder="Login*" minlength="4" data-target="p1">
+    <p id="p1">Enter login</p>
+    <input class="required" type="text" name="email"  required placeholder="Email*" data-target="p2">
+    <p id="p2">Enter email</p>
+    <input class="required" type="password" name="password" required  placeholder="Password*" minlength="6" data-target="p3">
+    <p id="p3">Enter password</p>
+    <input class="required" type="password" name="passwordConfirmInput" required minlength="6"  placeholder="Confirm password*" data-target="p4">
+    <p id="p4">Enter password again</p>
     <input type="submit" value="REGISTER">
   </form>
 
   <form action="" class="log-in" name="logIn">
     <h1 class="heading">Log in</h1>
-    <input class="required" type="text" name="login"  required placeholder="Login*">
-    <input class="required" type="text" name="email"  required placeholder="Email*">
-    <input class="required" type="password" name="password" id="password" required  placeholder="Password*">
+    <input class="required" type="text" name="login"  required placeholder="Login*" data-target="p5">
+    <p id="p5">Enter login</p>
+    <input class="required" type="text" name="email"  required placeholder="Email*" data-target="p6">
+    <p id="p6">Enter email</p>
+    <input class="required" type="password" name="password" id="password" required  placeholder="Password*" data-target="p7">
+    <p id= 'p7'>Enter password</p>
     <button id="forgetPassword">Forgot password?</button>
     <input type="submit" value="LOG IN">
   </form>
 
   <form action="" class="remindPassword" name="remindPassword">
     <h1 class="heading">Forgot your password?</h1>
-    <input class="required" type="text" name="email" required placeholder="Email*">
+    <input class="required" type="text" name="email" required placeholder="Email*" data-target="p8">
+    <p id="p8">Enter email</p>
     <input type="submit" value="Send password on my email">
     <button id="backToLogIn">&#8592; Back to log in</button>
   </form>

@@ -6,6 +6,7 @@ let logInBtn = document.querySelector('#logInBtn');
 let forgetPasswordBtn = document.querySelector('#forgetPassword');
 let backToLogInBtn = document.querySelector('#backToLogIn');
 
+// show and hide forms
 
 signUpBtn.addEventListener('click', function () {
   formLogIn.style.display = 'none';
@@ -31,16 +32,23 @@ backToLogInBtn.addEventListener('click', function () {
   formRemindPassword.style.display = 'none';
 })
 
+// mark not filled areas
+
 
 let requiredInputs = document.querySelectorAll('.required');
 requiredInputs.forEach(item => item.addEventListener('blur', function () {
+  const targetId = item.getAttribute('data-target');
+  const targetParagraph = document.getElementById(targetId)
   if (item.value.length == 0) {
-    item.classList.add('error');  
+    item.classList.add('error'); 
+    targetParagraph.style.display = 'block';
   } else {
-    item.classList.remove('error')
-  }
-  
+    item.classList.remove('error');
+    targetParagraph.style.display = 'none;'
+  }  
 }))
+
+
 
 formSignUp.email.addEventListener('input', checkEmailValidity(formSignUp))
 formLogIn.email.addEventListener('input', checkEmailValidity(formLogIn))
