@@ -50,22 +50,29 @@ requiredInputs.forEach(item => item.addEventListener('blur', function () {
 
 
 
-formSignUp.email.addEventListener('input', checkEmailValidity(formSignUp))
-formLogIn.email.addEventListener('input', checkEmailValidity(formLogIn))
-formRemindPassword.email.addEventListener('input', checkEmailValidity(formRemindPassword))
+formSignUp.email.addEventListener('input', function() {
+  checkEmailValidity(formSignUp);
+});
+formLogIn.email.addEventListener('input', function() {
+  checkEmailValidity(formLogIn);
+});
+formRemindPassword.email.addEventListener('input', function() {
+  checkEmailValidity(formRemindPassword);
+});
 
 function checkEmailValidity(form) {
   let value = form.email.value;
-  const emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailPattern.test(value)) {
     form.email.setCustomValidity('Вы ввели некорректный адрес');
   } else {
     form.email.setCustomValidity('');
-
   }
 }
 
-formSignUp.passwordConfirmInput.addEventListener('input', checkPasswordValidity(formSignUp));
+formSignUp.passwordConfirmInput.addEventListener('input', function(){
+  checkPasswordValidity(formSignUp)
+})
 
 
 function checkPasswordValidity(form) {
